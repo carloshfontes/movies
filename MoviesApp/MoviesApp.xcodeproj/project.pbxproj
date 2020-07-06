@@ -16,6 +16,7 @@
 		4022694524B279DE00AC68CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4022694324B279DE00AC68CD /* LaunchScreen.storyboard */; };
 		4022695024B279DE00AC68CD /* MoviesAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4022694F24B279DE00AC68CD /* MoviesAppTests.swift */; };
 		4022695B24B279DE00AC68CD /* MoviesAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4022695A24B279DE00AC68CD /* MoviesAppUITests.swift */; };
+		4022697424B29BFF00AC68CD /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4022697324B29BFF00AC68CD /* Movie.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		4022695624B279DE00AC68CD /* MoviesAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoviesAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4022695A24B279DE00AC68CD /* MoviesAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesAppUITests.swift; sourceTree = "<group>"; };
 		4022695C24B279DE00AC68CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4022697324B29BFF00AC68CD /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 		4022696824B279F100AC68CD /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4022697324B29BFF00AC68CD /* Movie.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4022697424B29BFF00AC68CD /* Movie.swift in Sources */,
 				4022693A24B279D800AC68CD /* ViewController.swift in Sources */,
 				4022693624B279D800AC68CD /* AppDelegate.swift in Sources */,
 				4022694024B279D800AC68CD /* MoviesApp.xcdatamodeld in Sources */,
