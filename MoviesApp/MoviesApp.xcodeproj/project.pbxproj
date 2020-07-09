@@ -16,6 +16,8 @@
 		4022694524B279DE00AC68CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4022694324B279DE00AC68CD /* LaunchScreen.storyboard */; };
 		4022695024B279DE00AC68CD /* MoviesAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4022694F24B279DE00AC68CD /* MoviesAppTests.swift */; };
 		4022695B24B279DE00AC68CD /* MoviesAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4022695A24B279DE00AC68CD /* MoviesAppUITests.swift */; };
+		4022697024B297D900AC68CD /* TmdbApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4022696F24B297D900AC68CD /* TmdbApi.swift */; };
+		4022697224B2981B00AC68CD /* Agent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4022697124B2981B00AC68CD /* Agent.swift */; };
 		4022697424B29BFF00AC68CD /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4022697324B29BFF00AC68CD /* Movie.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +54,8 @@
 		4022695624B279DE00AC68CD /* MoviesAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoviesAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4022695A24B279DE00AC68CD /* MoviesAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesAppUITests.swift; sourceTree = "<group>"; };
 		4022695C24B279DE00AC68CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4022696F24B297D900AC68CD /* TmdbApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TmdbApi.swift; sourceTree = "<group>"; };
+		4022697124B2981B00AC68CD /* Agent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Agent.swift; sourceTree = "<group>"; };
 		4022697324B29BFF00AC68CD /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -135,6 +139,8 @@
 		4022696824B279F100AC68CD /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4022696F24B297D900AC68CD /* TmdbApi.swift */,
+				4022697124B2981B00AC68CD /* Agent.swift */,
 				4022697324B29BFF00AC68CD /* Movie.swift */,
 			);
 			path = Model;
@@ -324,6 +330,8 @@
 				4022697424B29BFF00AC68CD /* Movie.swift in Sources */,
 				4022693A24B279D800AC68CD /* ViewController.swift in Sources */,
 				4022693624B279D800AC68CD /* AppDelegate.swift in Sources */,
+				4022697024B297D900AC68CD /* TmdbApi.swift in Sources */,
+				4022697224B2981B00AC68CD /* Agent.swift in Sources */,
 				4022694024B279D800AC68CD /* MoviesApp.xcdatamodeld in Sources */,
 				4022693824B279D800AC68CD /* SceneDelegate.swift in Sources */,
 			);
