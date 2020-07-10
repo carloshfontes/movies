@@ -65,6 +65,14 @@ extension MoviesListViewController: UICollectionViewDelegate{
     }
 }
 
+extension MoviesListViewController: UICollectionViewDelegateFlowLayout{
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        
+        return UIEdgeInsets(top: 20, left: 0, bottom: 20, right: 0)
+    }
+}
+
 extension MoviesListViewController: NotifyMoviesListViewDelegate {
     
     func completeLoading() {
