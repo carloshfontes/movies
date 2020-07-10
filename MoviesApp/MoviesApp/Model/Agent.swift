@@ -33,6 +33,18 @@ struct Agent {
         .eraseToAnyPublisher()
     }
     
+    func fetchMovie(_ request: URLRequest) -> AnyPublisher<Movie, Error> {
+        return URLSession.shared.dataTaskPublisher(for: request)
+        .tryMap { element -> Data in
+                guard let httpResponse = element.response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+                    throw URLError(.badServerResponse)
+                }
+                return element.data
+            }
+        .decode(type: Movie.self, decoder: JSONDecoder())
+        .eraseToAnyPublisher()
+    }
+    
     func imageLoader(_ request: URLRequest) -> AnyPublisher<UIImage, Error> {
         return URLSession.shared.dataTaskPublisher(for: request)
         .tryMap { element -> Data in

@@ -12,7 +12,7 @@ import Combine
 class MoviesListViewModel {
     lazy var tmdbAPIPublisher = TmdbAPI.recents(.popularity)
     private var subscriptions = Set<AnyCancellable>()
-    var delegate: MovieDelegate?
+    var delegate: NotifyMoviesListViewDelegate?
     var movies: [Movie] = []
     
     func fetchMovies(){
@@ -38,6 +38,3 @@ class MoviesListViewModel {
     }
 }
 
-protocol MovieDelegate{
-    func completeLoading()
-}

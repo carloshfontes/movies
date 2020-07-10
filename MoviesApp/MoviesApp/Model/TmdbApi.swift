@@ -42,12 +42,15 @@ extension TmdbAPI {
 
     
     static func recents(_ endpoint: Endpoint) -> AnyPublisher<[Movie], Error> {
-
         let url = URL(string: "https://api.themoviedb.org/3/discover/movie?api_key=0e971c7b20bccd213d26fd99f69f725e&language=en-US&sort_by=\(endpoint.path())&include_adult=false&include_video=false&page=1")!
-        
         let request = URLRequest(url: url)
         return agent.runApi(request)
-
+    }
+    
+    static func fetchMovieByID(id: Int) -> AnyPublisher<Movie, Error>{
+        let url = URL(string: "https://api.themoviedb.org/3/movie/\(id)?api_key=0e971c7b20bccd213d26fd99f69f725e&language=en-US")!
+        let request = URLRequest(url: url)
+        return agent.fetchMovie(request)
     }
     
     static func donwloadImage(_ imagePath: URL) -> AnyPublisher<UIImage, Error>{
