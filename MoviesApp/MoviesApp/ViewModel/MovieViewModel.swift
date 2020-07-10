@@ -11,7 +11,7 @@ import Combine
 
 class MovieViewModel{
     var movie: Movie?
-    var delegate: NotifyMovieViewModelDelegate?
+    weak var delegate: NotifyMovieViewModelDelegate?
     var cancellabe: AnyCancellable?
     
     func fetchMovie(movieID: Int){
@@ -19,8 +19,8 @@ class MovieViewModel{
         
         
         cancellabe = tmdbAPIPublisher
-        .receive(on: DispatchQueue.main)
-        .sink(receiveCompletion: { result in
+            .receive(on: DispatchQueue.main)
+            .sink(receiveCompletion: { result in
             
             switch result {
                 
@@ -35,8 +35,10 @@ class MovieViewModel{
             print(value)
             self.movie = value
         })
-       
-        
+    }
+    
+    deinit {
+        cancellabe?.cancel()
     }
 }
 

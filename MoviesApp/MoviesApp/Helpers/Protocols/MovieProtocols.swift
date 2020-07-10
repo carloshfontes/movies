@@ -8,11 +8,11 @@
 
 import Foundation
 
-protocol NotifyMovieViewModelDelegate{
+protocol NotifyMovieViewModelDelegate: class{
     func completeLoading()
 }
 
 
-protocol NotifyMoviesListViewDelegate{
+protocol NotifyMoviesListViewDelegate: class{
     func completeLoading()
 }

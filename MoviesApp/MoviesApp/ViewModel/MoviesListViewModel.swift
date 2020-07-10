@@ -11,12 +11,12 @@ import Combine
 
 class MoviesListViewModel {
     lazy var tmdbAPIPublisher = TmdbAPI.recents(.popularity)
-    private var subscriptions = Set<AnyCancellable>()
-    var delegate: NotifyMoviesListViewDelegate?
+    private var cancellabe: AnyCancellable?
+    weak var delegate: NotifyMoviesListViewDelegate?
     var movies: [Movie] = []
     
     func fetchMovies(){
-        tmdbAPIPublisher
+        cancellabe = tmdbAPIPublisher
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { result in
                 
@@ -34,7 +34,9 @@ class MoviesListViewModel {
                 self.movies = value
                 
             })
-            .store(in: &subscriptions)
+    }
+    deinit {
+        cancellabe?.cancel()
     }
 }
 
