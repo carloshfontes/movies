@@ -17,12 +17,12 @@ class MoviesListCollectionViewCell: UICollectionViewCell {
     }
     
     //Views
-    @IBOutlet weak var rateView: UIView!
+    
+    @IBOutlet weak var averageView: AverageView!
     @IBOutlet weak var mainGenreView: GenreView!
     @IBOutlet weak var secondGenreView: GenreView!
     
     //Outlets
-    @IBOutlet weak var average: UILabel!
     @IBOutlet weak var movieUIImageView: MovieUIImageView!
     @IBOutlet weak var movieTitle: UILabel!
     
@@ -34,13 +34,10 @@ class MoviesListCollectionViewCell: UICollectionViewCell {
             
             // passing movie data
             self.movieTitle.text = movie.title
+            self.averageView.label.text = "\(movie.vote_average)"
             self.movieUIImageView.imagePath = movie.posterURL
-            self.average.text = "\(movie.vote_average)"
         }
-        
-        // setting rateView
-        self.rateView.layer.cornerRadius = self.rateView.frame.size.width / 2
-        
+
         // setting image and image layer
         let coverLayer = CALayer()
         coverLayer.frame = movieUIImageView.bounds;

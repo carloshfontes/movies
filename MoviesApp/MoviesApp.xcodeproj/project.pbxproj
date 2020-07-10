@@ -27,6 +27,7 @@
 		40FB432824B7B067000F5869 /* MovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FB432724B7B067000F5869 /* MovieViewController.swift */; };
 		40FB432A24B7B1BF000F5869 /* MovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FB432924B7B1BF000F5869 /* MovieViewModel.swift */; };
 		497CBBC324B8E77F00891F03 /* GenreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497CBBC224B8E77F00891F03 /* GenreView.swift */; };
+		497CBBC724B9034D00891F03 /* AverageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497CBBC624B9034D00891F03 /* AverageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		40FB432724B7B067000F5869 /* MovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewController.swift; sourceTree = "<group>"; };
 		40FB432924B7B1BF000F5869 /* MovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewModel.swift; sourceTree = "<group>"; };
 		497CBBC224B8E77F00891F03 /* GenreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreView.swift; sourceTree = "<group>"; };
+		497CBBC624B9034D00891F03 /* AverageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AverageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,6 +223,7 @@
 			children = (
 				40FB432224B75B64000F5869 /* MovieUIImageView.swift */,
 				497CBBC224B8E77F00891F03 /* GenreView.swift */,
+				497CBBC624B9034D00891F03 /* AverageView.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -404,6 +407,7 @@
 				4022697224B2981B00AC68CD /* Agent.swift in Sources */,
 				4022694024B279D800AC68CD /* MoviesApp.xcdatamodeld in Sources */,
 				4022693824B279D800AC68CD /* SceneDelegate.swift in Sources */,
+				497CBBC724B9034D00891F03 /* AverageView.swift in Sources */,
 				40CC05F424B7543C00719671 /* MoviesListViewModel.swift in Sources */,
 				40FB432A24B7B1BF000F5869 /* MovieViewModel.swift in Sources */,
 			);
@@ -510,7 +514,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -564,7 +568,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
