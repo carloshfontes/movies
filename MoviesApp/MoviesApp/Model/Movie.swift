@@ -9,6 +9,7 @@
 import Foundation
 
 struct Movie: Codable {
+    let id: Int
     let title: String
     let overview: String
     let backdrop_path: String
@@ -16,6 +17,9 @@ struct Movie: Codable {
     let popularity: Double
     let release_date: String
     let vote_average: Double
+    let runtime: Int?
+    let tagline: String?
+    let genres: [Genre]?
     
     var releaseDate: Int? {
         let formatter = Movie.dateFormatter.date(from: release_date)
@@ -31,11 +35,20 @@ struct Movie: Codable {
     public var posterURL: URL {
         return URL(string: "https://image.tmdb.org/t/p/w500\(poster_path)")!
     }
+    
+    public var backdropURL: URL {
+        return URL(string: "https://image.tmdb.org/t/p/original\(backdrop_path)")!
+    }
 }
 
 
 struct Results: Codable{
     let results: [Movie]
+}
+
+struct Genre: Codable{
+    let id: Int
+    let name: String
 }
 
 

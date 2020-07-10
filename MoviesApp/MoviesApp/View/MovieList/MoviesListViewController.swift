@@ -10,14 +10,21 @@ import UIKit
 
 class MoviesListViewController: UIViewController {
     let moviesListVM = MoviesListViewModel()
+    var id: Int?
     
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var collectionView: UICollectionView! {
+        didSet{
+            collectionView.dataSource = self
+            collectionView.delegate = self
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.view.backgroundColor =  UIColor(red: 0.928358674, green: 0.9319424629, blue: 0.9427042007, alpha: 1)
         
-        collectionView.dataSource = self
+
         moviesListVM.delegate = self
         moviesListVM.fetchMovies()
     }
@@ -41,7 +48,25 @@ extension MoviesListViewController: UICollectionViewDataSource {
     
 }
 
-extension MoviesListViewController: MovieDelegate {
+extension MoviesListViewController: UICollectionViewDelegate{
+    func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+
+        self.id = moviesListVM.movies[indexPath.row].id
+        performSegue(withIdentifier: "toMovie", sender: nil)
+        return true
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toMovie" {
+            if let vc = segue.destination as? MovieViewController, let movieID = self.id{
+                vc.id = movieID
+            }
+        }
+    }
+}
+
+extension MoviesListViewController: NotifyMoviesListViewDelegate {
+    
     func completeLoading() {
         self.collectionView.reloadData()
     }
