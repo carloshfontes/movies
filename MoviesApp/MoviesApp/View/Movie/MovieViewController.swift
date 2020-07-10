@@ -10,19 +10,46 @@ import UIKit
 
 class MovieViewController: UIViewController {
     
+    //Outlets
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var overview: UILabel!
     @IBOutlet weak var movieUIImage: MovieUIImageView!
+    
+    //Custom Views
+    @IBOutlet weak var averageView: AverageView!
+    @IBOutlet weak var mainGenreView: GenreView!
+    @IBOutlet weak var secondGenreView: GenreView!
+    
+    //Buttons
+    @IBOutlet weak var favoriteButton: UIButton!
+    
+    
     var id: Int?
     var movieViewModel = MovieViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setUpImage()
+        
         if let id = id {
             movieViewModel.delegate = self
             movieViewModel.fetchMovie(movieID: id)
         }
     }
     
+    func setUpImage(){
+        // setting image and image layer
+        let coverLayer = CALayer()
+        coverLayer.frame = movieUIImage.bounds;
+        coverLayer.backgroundColor = UIColor.black.cgColor
+        coverLayer.opacity = 0.1
+        movieUIImage.layer.addSublayer(coverLayer)
+    }
+    
+    @IBAction func favoriteButtonAction(_ sender: Any) {
+        self.favoriteButton.setImage(UIImage(named: "Red heart"), for: .normal)
+    }
 }
 
 extension MovieViewController: NotifyMovieViewModelDelegate{
@@ -30,6 +57,8 @@ extension MovieViewController: NotifyMovieViewModelDelegate{
         if let movie = movieViewModel.movie, let backdropURL = movie.backdropURL {
             self.movieUIImage.imagePath = backdropURL
             self.overview.text = movie.overview
+            self.titleLabel.text = movie.title
+            self.averageView.label.text = "\(movie.vote_average)"
         }
     }
 }

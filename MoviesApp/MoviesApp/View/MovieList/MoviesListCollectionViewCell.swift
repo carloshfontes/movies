@@ -16,7 +16,7 @@ class MoviesListCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    //Views
+    //Custom Views
     
     @IBOutlet weak var averageView: AverageView!
     @IBOutlet weak var mainGenreView: GenreView!
@@ -26,7 +26,7 @@ class MoviesListCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var movieUIImageView: MovieUIImageView!
     @IBOutlet weak var movieTitle: UILabel!
     
-    //buttons
+    //Buttons
     @IBOutlet weak var favoriteButton: UIButton!
     
     private func updateUI(){
