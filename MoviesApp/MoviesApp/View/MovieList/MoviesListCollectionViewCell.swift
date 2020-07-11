@@ -24,7 +24,6 @@ class MoviesListCollectionViewCell: UICollectionViewCell {
     
     //Outlets
     @IBOutlet weak var movieUIImageView: MovieUIImageView!
-    @IBOutlet weak var movieTitle: UILabel!
     
     //Buttons
     @IBOutlet weak var favoriteButton: UIButton!
@@ -33,7 +32,6 @@ class MoviesListCollectionViewCell: UICollectionViewCell {
         if let movie = self.movie {
             
             // passing movie data
-            self.movieTitle.text = movie.title
             self.averageView.label.text = "\(movie.vote_average)"
             self.movieUIImageView.imagePath = movie.posterURL
         }
@@ -48,11 +46,14 @@ class MoviesListCollectionViewCell: UICollectionViewCell {
         
         // setting cell layer
         self.layer.cornerRadius = 20
-        self.layer.shadowRadius = 20
+        self.layer.shadowRadius = 10
         self.layer.masksToBounds = false
         self.layer.shadowColor = UIColor.black.cgColor
         self.layer.shadowOffset = .zero
-        self.layer.shadowOpacity = 1
+        self.layer.shadowOpacity = 0.4
+        
+        self.layer.borderWidth = 2.0
+        self.layer.borderColor = UIColor(red: 1.00, green: 0.77, blue: 0.00, alpha: 1.00).cgColor
     }
     
     @IBAction func favoriteButtonAction(_ sender: Any) {

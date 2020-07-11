@@ -36,12 +36,6 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zL4-9D-u6a" customClass="MovieUIImageView" customModule="MoviesApp" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="332" height="550"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fgp-MM-4bW">
-                                                    <rect key="frame" x="16.5" y="95" width="299" height="30"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4hh-XT-WP6">
                                                     <rect key="frame" x="279" y="24.5" width="33" height="33.5"/>
                                                     <constraints>
@@ -79,17 +73,14 @@
                                                 <constraint firstAttribute="bottom" secondItem="zL4-9D-u6a" secondAttribute="bottom" id="IhP-nz-2Pu"/>
                                                 <constraint firstItem="Eu4-KS-WS5" firstAttribute="width" secondItem="zWT-ZU-RSa" secondAttribute="width" multiplier="0.106383" id="JHY-zF-r8J"/>
                                                 <constraint firstItem="zL4-9D-u6a" firstAttribute="leading" secondItem="zWT-ZU-RSa" secondAttribute="leading" id="MaE-Dw-4dD"/>
-                                                <constraint firstItem="fgp-MM-4bW" firstAttribute="centerX" secondItem="zWT-ZU-RSa" secondAttribute="centerX" id="SfS-Wm-hxD"/>
                                                 <constraint firstItem="UfK-ef-CBW" firstAttribute="leading" secondItem="mR6-i3-gPG" secondAttribute="trailing" constant="10" id="VAQ-M3-Uid"/>
                                                 <constraint firstItem="Eu4-KS-WS5" firstAttribute="centerY" secondItem="4hh-XT-WP6" secondAttribute="centerY" id="cUk-Tc-cs0"/>
                                                 <constraint firstItem="mR6-i3-gPG" firstAttribute="centerX" secondItem="zWT-ZU-RSa" secondAttribute="centerX" multiplier="0.3" id="hRt-w9-G5L"/>
                                                 <constraint firstItem="mR6-i3-gPG" firstAttribute="width" secondItem="zWT-ZU-RSa" secondAttribute="width" multiplier="0.21988" id="lEQ-Xi-Zdf"/>
                                                 <constraint firstItem="Eu4-KS-WS5" firstAttribute="leading" secondItem="zWT-ZU-RSa" secondAttribute="leading" constant="20" id="qcF-ag-fJv"/>
-                                                <constraint firstItem="fgp-MM-4bW" firstAttribute="width" secondItem="zWT-ZU-RSa" secondAttribute="width" multiplier="0.9" id="tBz-gg-fZz"/>
                                                 <constraint firstAttribute="trailing" secondItem="4hh-XT-WP6" secondAttribute="trailing" constant="20" id="tJB-tw-iuz"/>
                                                 <constraint firstItem="UfK-ef-CBW" firstAttribute="top" secondItem="mR6-i3-gPG" secondAttribute="top" id="to3-lO-eMX"/>
                                                 <constraint firstItem="UfK-ef-CBW" firstAttribute="height" secondItem="mR6-i3-gPG" secondAttribute="height" id="v7g-oW-DRi"/>
-                                                <constraint firstItem="fgp-MM-4bW" firstAttribute="centerY" secondItem="zWT-ZU-RSa" secondAttribute="centerY" multiplier="0.4" id="vcW-wC-lfp"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -98,7 +89,6 @@
                                             <outlet property="averageView" destination="Eu4-KS-WS5" id="zBw-ka-fz7"/>
                                             <outlet property="favoriteButton" destination="4hh-XT-WP6" id="eFq-bc-0kT"/>
                                             <outlet property="mainGenreView" destination="UfK-ef-CBW" id="2sZ-Yk-ZmP"/>
-                                            <outlet property="movieTitle" destination="fgp-MM-4bW" id="OgC-hc-KxL"/>
                                             <outlet property="movieUIImageView" destination="zL4-9D-u6a" id="cZV-Ij-8H2"/>
                                             <outlet property="secondGenreView" destination="UfK-ef-CBW" id="oGI-9c-I7H"/>
                                         </connections>
@@ -115,7 +105,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Z8A-dm-nZb"/>
+                    <navigationItem key="navigationItem" id="Z8A-dm-nZb">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="heart.fill" catalog="system" id="DNv-56-y4V">
+                            <color key="tintColor" red="0.99740785359999995" green="0.77775472400000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="TMQ-lk-m6g" id="gjn-Zf-lQh"/>
                         <segue destination="Qzy-ho-sib" kind="show" identifier="toMovie" id="YG4-6l-xWA"/>
@@ -143,6 +137,11 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Pdw-Gj-4Zq">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -156,5 +155,6 @@
     </scenes>
     <resources>
         <image name="Gray heart" width="100" height="100"/>
+        <image name="heart.fill" catalog="system" width="128" height="109"/>
     </resources>
 </document>

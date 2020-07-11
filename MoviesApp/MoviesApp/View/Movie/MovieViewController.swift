@@ -30,12 +30,17 @@ class MovieViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.view.backgroundColor = .clear
+        self.view.backgroundColor =  .black
         setUpImage()
         
         if let id = id {
             movieViewModel.delegate = self
             movieViewModel.fetchMovie(movieID: id)
         }
+
     }
     
     func setUpImage(){
@@ -43,7 +48,7 @@ class MovieViewController: UIViewController {
         let coverLayer = CALayer()
         coverLayer.frame = movieUIImage.bounds;
         coverLayer.backgroundColor = UIColor.black.cgColor
-        coverLayer.opacity = 0.1
+        coverLayer.opacity = 0.5
         movieUIImage.layer.addSublayer(coverLayer)
     }
     

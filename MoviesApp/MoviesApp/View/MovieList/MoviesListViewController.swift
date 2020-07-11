@@ -22,14 +22,24 @@ class MoviesListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor =  UIColor(red: 0.928358674, green: 0.9319424629, blue: 0.9427042007, alpha: 1)
-        
+        self.view.backgroundColor = .black
+
 
         moviesListVM.delegate = self
         moviesListVM.fetchMovies()
+        
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationController?.navigationBar.topItem?.title = "Movies"
+        navigationController?.navigationBar.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+
+        
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+
+        
     }
-
-
+    
+    
 }
 
 extension MoviesListViewController: UICollectionViewDataSource {
@@ -50,7 +60,7 @@ extension MoviesListViewController: UICollectionViewDataSource {
 
 extension MoviesListViewController: UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-
+        
         self.id = moviesListVM.movies[indexPath.row].id
         performSegue(withIdentifier: "toMovie", sender: nil)
         return true
