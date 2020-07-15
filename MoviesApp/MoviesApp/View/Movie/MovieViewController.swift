@@ -17,8 +17,6 @@ class MovieViewController: UIViewController {
     
     //Custom Views
     @IBOutlet weak var averageView: AverageView!
-    @IBOutlet weak var mainGenreView: GenreView!
-    @IBOutlet weak var secondGenreView: GenreView!
     
     //Buttons
     @IBOutlet weak var favoriteButton: UIButton!
