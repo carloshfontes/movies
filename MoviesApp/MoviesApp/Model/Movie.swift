@@ -39,6 +39,18 @@ struct Movie: Codable {
     public var backdropURL: URL? {
         return URL(string: "https://image.tmdb.org/t/p/original\(backdrop_path)")
     }
+    
+    public func getGenresNames() -> String{
+        var genresName: String = ""
+        
+        for i in genres!{
+            genresName += "\(i.name), "
+        }
+        
+        genresName = String(genresName.dropLast(2))
+        
+        return genresName
+    }
 }
 
 

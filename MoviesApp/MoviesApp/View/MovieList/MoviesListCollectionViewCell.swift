@@ -16,12 +16,6 @@ class MoviesListCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    //Custom Views
-    
-    @IBOutlet weak var averageView: AverageView!
-    @IBOutlet weak var mainGenreView: GenreView!
-    @IBOutlet weak var secondGenreView: GenreView!
-    
     //Outlets
     @IBOutlet weak var movieUIImageView: MovieUIImageView!
     
@@ -32,7 +26,6 @@ class MoviesListCollectionViewCell: UICollectionViewCell {
         if let movie = self.movie {
             
             // passing movie data
-            self.averageView.label.text = "\(movie.vote_average)"
             self.movieUIImageView.imagePath = movie.posterURL
         }
 
