@@ -12,6 +12,8 @@ class MovieViewController: UIViewController {
     
     //Outlets
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var detailsLabel: UILabel!
+    @IBOutlet weak var yearLabel: UILabel!
     @IBOutlet weak var overview: UITextView!
     @IBOutlet weak var movieUIImage: MovieUIImageView!
     
@@ -32,13 +34,16 @@ class MovieViewController: UIViewController {
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.view.backgroundColor = .clear
         self.view.backgroundColor =  .black
-        setUpImage()
+//        setUpImage()
         
         if let id = id {
             movieViewModel.delegate = self
             movieViewModel.fetchMovie(movieID: id)
         }
-
+    }
+    
+    override func viewDidLayoutSubviews() {
+        setUpImage()
     }
     
     func setUpImage(){
@@ -46,8 +51,13 @@ class MovieViewController: UIViewController {
         let coverLayer = CALayer()
         coverLayer.frame = movieUIImage.bounds;
         coverLayer.backgroundColor = UIColor.black.cgColor
-        coverLayer.opacity = 0.5
+        coverLayer.opacity = 0.1
         movieUIImage.layer.addSublayer(coverLayer)
+       
+        let gradient = CAGradientLayer()
+        gradient.frame = CGRect(x: 0, y: movieUIImage.frame.height * 0.85, width: movieUIImage.frame.width, height: movieUIImage.frame.height * 0.15)
+        gradient.colors = [UIColor(white: 0, alpha: 0.1).cgColor, UIColor(white: 0, alpha: 0.35).cgColor, UIColor(white: 0, alpha: 0.55).cgColor]
+        movieUIImage.layer.addSublayer(gradient)
     }
     
     @IBAction func favoriteButtonAction(_ sender: Any) {
@@ -59,6 +69,8 @@ extension MovieViewController: NotifyMovieViewModelDelegate{
     func completeLoading() {
         if let movie = movieViewModel.movie, let backdropURL = movie.backdropURL {
             self.movieUIImage.imagePath = backdropURL
+            self.yearLabel.text = "(\(movie.releaseDate!))"
+            self.detailsLabel.text = "\(movie.runtime!.hoursMinutesFormact())  |  \(movie.getGenresNames())"
             self.overview.text = movie.overview
             self.titleLabel.text = movie.title
             self.averageView.label.text = "\(movie.vote_average)"

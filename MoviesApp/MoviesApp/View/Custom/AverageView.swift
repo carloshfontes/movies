@@ -32,9 +32,9 @@ class AverageView: UIView{
         self.addSubview(image)
         
         //setting view
-        self.backgroundColor = .red
-        self.label.backgroundColor = .blue
-        self.image.backgroundColor = .green
+        self.backgroundColor = .clear
+//        self.label.backgroundColor = .blue
+//        self.image.backgroundColor = .green
     }
 }
 
