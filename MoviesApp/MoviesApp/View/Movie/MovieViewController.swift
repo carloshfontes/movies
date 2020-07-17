@@ -12,7 +12,7 @@ class MovieViewController: UIViewController {
     
     //Outlets
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var overview: UILabel!
+    @IBOutlet weak var overview: UITextView!
     @IBOutlet weak var movieUIImage: MovieUIImageView!
     
     //Custom Views

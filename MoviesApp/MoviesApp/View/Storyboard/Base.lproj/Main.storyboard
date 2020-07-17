@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="j2K-20-cHR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="j2K-20-cHR">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -46,51 +46,22 @@
                                                         <action selector="favoriteButtonAction:" destination="RYq-wj-Muw" eventType="touchUpInside" id="OfD-7J-lTo"/>
                                                     </connections>
                                                 </button>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eu4-KS-WS5" customClass="AverageView" customModule="MoviesApp" customModuleProvider="target">
-                                                    <rect key="frame" x="20" y="23.5" width="35.5" height="35.5"/>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="Eu4-KS-WS5" secondAttribute="height" multiplier="1:1" id="s3O-lg-Eii"/>
-                                                    </constraints>
-                                                </view>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mR6-i3-gPG" customClass="GenreView" customModule="MoviesApp" customModuleProvider="target">
-                                                    <rect key="frame" x="13.5" y="507.5" width="73" height="30"/>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                </view>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UfK-ef-CBW" customClass="GenreView" customModule="MoviesApp" customModuleProvider="target">
-                                                    <rect key="frame" x="96.5" y="507.5" width="73" height="30"/>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="zL4-9D-u6a" firstAttribute="top" secondItem="zWT-ZU-RSa" secondAttribute="top" id="0Df-h7-3ym"/>
                                                 <constraint firstItem="4hh-XT-WP6" firstAttribute="width" secondItem="zWT-ZU-RSa" secondAttribute="width" multiplier="0.1" id="0zB-DS-wuY"/>
                                                 <constraint firstAttribute="trailing" secondItem="zL4-9D-u6a" secondAttribute="trailing" id="2B2-gG-nWn"/>
-                                                <constraint firstItem="mR6-i3-gPG" firstAttribute="centerY" secondItem="zWT-ZU-RSa" secondAttribute="centerY" multiplier="1.9" id="Ab1-r2-SoC"/>
-                                                <constraint firstItem="UfK-ef-CBW" firstAttribute="width" secondItem="mR6-i3-gPG" secondAttribute="width" id="Dlh-0x-CHu"/>
                                                 <constraint firstItem="4hh-XT-WP6" firstAttribute="centerY" secondItem="zWT-ZU-RSa" secondAttribute="centerY" multiplier="0.15" id="EQT-FV-XFz"/>
-                                                <constraint firstItem="mR6-i3-gPG" firstAttribute="height" secondItem="zWT-ZU-RSa" secondAttribute="height" multiplier="0.0545455" id="EqR-or-j0C"/>
                                                 <constraint firstAttribute="bottom" secondItem="zL4-9D-u6a" secondAttribute="bottom" id="IhP-nz-2Pu"/>
-                                                <constraint firstItem="Eu4-KS-WS5" firstAttribute="width" secondItem="zWT-ZU-RSa" secondAttribute="width" multiplier="0.106383" id="JHY-zF-r8J"/>
                                                 <constraint firstItem="zL4-9D-u6a" firstAttribute="leading" secondItem="zWT-ZU-RSa" secondAttribute="leading" id="MaE-Dw-4dD"/>
-                                                <constraint firstItem="UfK-ef-CBW" firstAttribute="leading" secondItem="mR6-i3-gPG" secondAttribute="trailing" constant="10" id="VAQ-M3-Uid"/>
-                                                <constraint firstItem="Eu4-KS-WS5" firstAttribute="centerY" secondItem="4hh-XT-WP6" secondAttribute="centerY" id="cUk-Tc-cs0"/>
-                                                <constraint firstItem="mR6-i3-gPG" firstAttribute="centerX" secondItem="zWT-ZU-RSa" secondAttribute="centerX" multiplier="0.3" id="hRt-w9-G5L"/>
-                                                <constraint firstItem="mR6-i3-gPG" firstAttribute="width" secondItem="zWT-ZU-RSa" secondAttribute="width" multiplier="0.21988" id="lEQ-Xi-Zdf"/>
-                                                <constraint firstItem="Eu4-KS-WS5" firstAttribute="leading" secondItem="zWT-ZU-RSa" secondAttribute="leading" constant="20" id="qcF-ag-fJv"/>
                                                 <constraint firstAttribute="trailing" secondItem="4hh-XT-WP6" secondAttribute="trailing" constant="20" id="tJB-tw-iuz"/>
-                                                <constraint firstItem="UfK-ef-CBW" firstAttribute="top" secondItem="mR6-i3-gPG" secondAttribute="top" id="to3-lO-eMX"/>
-                                                <constraint firstItem="UfK-ef-CBW" firstAttribute="height" secondItem="mR6-i3-gPG" secondAttribute="height" id="v7g-oW-DRi"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <size key="customSize" width="332" height="550"/>
                                         <connections>
-                                            <outlet property="averageView" destination="Eu4-KS-WS5" id="zBw-ka-fz7"/>
                                             <outlet property="favoriteButton" destination="4hh-XT-WP6" id="eFq-bc-0kT"/>
-                                            <outlet property="mainGenreView" destination="UfK-ef-CBW" id="2sZ-Yk-ZmP"/>
                                             <outlet property="movieUIImageView" destination="zL4-9D-u6a" id="cZV-Ij-8H2"/>
-                                            <outlet property="secondGenreView" destination="UfK-ef-CBW" id="oGI-9c-I7H"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

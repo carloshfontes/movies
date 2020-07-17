@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Vp4-7N-JJf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Vp4-7N-JJf">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -15,13 +15,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Overview" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nEf-WZ-ZGS">
-                                <rect key="frame" x="20" y="429.5" width="374" height="377"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DWg-kJ-tZ0">
                                 <rect key="frame" x="0.0" y="44" width="414" height="356"/>
                                 <subviews>
@@ -45,7 +38,7 @@
                                             <constraint firstAttribute="width" secondItem="vuw-M6-1Rg" secondAttribute="height" multiplier="83:50" id="d0H-PW-BC6"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="0vX-0g-qG0">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="0vX-0g-qG0">
                                         <rect key="frame" x="30" y="242" width="162" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="0vX-0g-qG0" secondAttribute="height" multiplier="81:25" id="afU-lz-LiS"/>
@@ -92,20 +85,27 @@
                                     <constraint firstItem="yOV-FK-V4W" firstAttribute="leading" secondItem="DWg-kJ-tZ0" secondAttribute="leading" constant="30" id="hYN-Az-VIe"/>
                                 </constraints>
                             </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5EP-BK-5tT">
+                                <rect key="frame" x="20" y="430" width="374" height="402"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="DWg-kJ-tZ0" firstAttribute="leading" secondItem="fCI-E8-2JF" secondAttribute="leading" id="281-au-rNr"/>
-                            <constraint firstItem="nEf-WZ-ZGS" firstAttribute="centerY" secondItem="6Rq-HD-r8g" secondAttribute="centerY" multiplier="1.38" id="3DV-CE-ysL"/>
                             <constraint firstItem="DWg-kJ-tZ0" firstAttribute="height" secondItem="6Rq-HD-r8g" secondAttribute="height" multiplier="0.397321" id="6p2-gQ-77a"/>
                             <constraint firstItem="DWg-kJ-tZ0" firstAttribute="trailing" secondItem="fCI-E8-2JF" secondAttribute="trailing" id="C3j-rr-1ub"/>
                             <constraint firstItem="HVP-2R-V6k" firstAttribute="width" secondItem="6Rq-HD-r8g" secondAttribute="width" multiplier="0.0797101" id="JQd-fp-eSH"/>
+                            <constraint firstItem="5EP-BK-5tT" firstAttribute="top" secondItem="DWg-kJ-tZ0" secondAttribute="bottom" constant="30" id="NwK-AD-pJx"/>
+                            <constraint firstItem="fCI-E8-2JF" firstAttribute="bottom" secondItem="5EP-BK-5tT" secondAttribute="bottom" constant="30" id="OU6-VS-11J"/>
                             <constraint firstItem="DWg-kJ-tZ0" firstAttribute="top" secondItem="fCI-E8-2JF" secondAttribute="top" id="aUm-8f-1qT"/>
+                            <constraint firstItem="5EP-BK-5tT" firstAttribute="leading" secondItem="fCI-E8-2JF" secondAttribute="leading" constant="20" id="afC-4S-C2v"/>
                             <constraint firstItem="DWg-kJ-tZ0" firstAttribute="trailing" secondItem="fCI-E8-2JF" secondAttribute="trailing" id="cgM-Dh-y7g"/>
+                            <constraint firstItem="fCI-E8-2JF" firstAttribute="trailing" secondItem="5EP-BK-5tT" secondAttribute="trailing" constant="20" id="doM-Bb-lk8"/>
                             <constraint firstItem="DWg-kJ-tZ0" firstAttribute="leading" secondItem="fCI-E8-2JF" secondAttribute="leading" id="e9w-Dj-Nlm"/>
-                            <constraint firstItem="nEf-WZ-ZGS" firstAttribute="height" secondItem="6Rq-HD-r8g" secondAttribute="height" multiplier="0.420759" id="liC-fk-nFH"/>
-                            <constraint firstItem="nEf-WZ-ZGS" firstAttribute="centerX" secondItem="6Rq-HD-r8g" secondAttribute="centerX" id="nFf-nq-vhk"/>
-                            <constraint firstItem="nEf-WZ-ZGS" firstAttribute="width" secondItem="6Rq-HD-r8g" secondAttribute="width" multiplier="0.903382" id="oUV-ln-0oI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fCI-E8-2JF"/>
                     </view>
@@ -113,7 +113,7 @@
                         <outlet property="averageView" destination="vuw-M6-1Rg" id="K9w-f2-f1f"/>
                         <outlet property="favoriteButton" destination="HVP-2R-V6k" id="bCX-Br-OE7"/>
                         <outlet property="movieUIImage" destination="BCS-Vd-SVo" id="n85-GH-Rnj"/>
-                        <outlet property="overview" destination="nEf-WZ-ZGS" id="YbI-o0-0pp"/>
+                        <outlet property="overview" destination="5EP-BK-5tT" id="kt2-Al-YVM"/>
                         <outlet property="titleLabel" destination="0vX-0g-qG0" id="f2h-WI-uxQ"/>
                     </connections>
                 </viewController>
